@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<!-- Utilize the project inheritance feature of Maven to inherit 
+	 all configurations in the project "spring-boot-starter-parent" for Spring Boot -->
+	 <!-- This parent project contain information about the versions of JAR files of below dependencies -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.7.3</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	
+	<!-- Information of this project -->
+	<groupId>com.example</groupId>
+	<artifactId>spring-boot-REST-API-demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>spring-boot-REST-API-demo</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+	
+	<!-- List all dependencies required for the project -->
+	<!-- Utilize the provided dependencies from Spring Boot which each of them contain 
+	 the collection of required dependencies or JAR files, allow us don't have to list 
+	 all of them manually -->
+	 <!-- Note that these dependencies only contain information for the list of JAR files that
+	 will be downloaded by Maven, but the information about their versions will need to be obtained 
+	 from the parent project -->
+	<dependencies>
+	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+		
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+		</plugins>
+	</build>
+
+</project>
